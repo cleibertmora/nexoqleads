@@ -1,0 +1,11 @@
+.container_upload_image {
+    display: grid;
+}
+
+.container_upload_image .upload_single_image {
+    width: max-content;
+}
+
+.container_upload_image .image_preview_upload {
+    max-height: 120px;
+}

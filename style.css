@@ -1,0 +1,281 @@
+/**
+
+    Theme Name: Astra Child LeadGen
+
+    Author: Cleibert Mora
+
+    Author URI: http://cleibertmora.com/
+
+    Description: Custom Astra theme for LeadGen business
+
+    Version: 1.0.0
+
+    License: GNU General Public License v2 or later
+
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+    Text Domain: astra-child
+
+    Template: astra
+
+*/
+
+
+
+/* =Tus estilos personalizados irán aquí
+
+-------------------------------------------------------------- */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap');
+
+
+
+html,
+body {
+
+    font-family: 'Raleway', sans-serif !important;
+
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+p {
+
+    font-family: 'Raleway', sans-serif !important;
+
+}
+
+
+
+.powered-by-wordpress {
+
+    display: none;
+
+}
+
+
+
+.post-date {
+
+    display: none !important;
+
+}
+
+
+
+.entry-categories-inner {
+
+    display: none;
+
+}
+
+
+
+.related-post {
+
+    clear: both;
+
+    margin: auto auto !important;
+
+}
+
+
+
+.site-description {
+
+    display: none;
+
+}
+
+
+
+
+
+/* SHORCODE GALERIA DE PAGINA */
+
+
+
+.mi_wp_galeria {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+    /* Esto centra los elementos horizontemente */
+
+}
+
+
+
+.mi_wp_galeria_pagina {
+
+    width: calc(33.33% - 1rem);
+    /* Tomando en cuenta el gap de 1rem */
+
+    box-sizing: border-box;
+
+    /* El resto de las propiedades se mantienen igual */
+
+    margin: 0.5rem;
+    /* Esto añade un margen de 0.5rem alrededor de cada elemento, creando un gap de 1rem entre elementos adyacentes. */
+
+}
+
+
+
+.mi_wp_galeria_pagina .mi_wp_pagina_link {
+
+    text-decoration: none;
+
+}
+
+
+
+.mi_wp_galeria_pagina .nombre_pagina {
+
+    margin-top: .5rem;
+
+    margin-bottom: 3rem;
+
+    text-align: center;
+
+}
+
+
+
+/* Añade una transición a la imagen para que el escalamiento sea suave */
+
+.mi_wp_galeria_pagina a img {
+
+    transition: transform 0.3s ease;
+    /* 0.3s es el tiempo que tomará la animación. Puedes ajustarlo según tus necesidades. */
+
+    border-radius: 10px;
+    /* Esto redondea los bordes de la imagen. */
+
+    width: 100%;
+    /* Asegura que todas las imágenes ocupen el mismo ancho. */
+
+    height: auto;
+    /* Mantén la proporción de la imagen. */
+
+    object-fit: cover;
+    /* Asegura que la imagen cubra todo el espacio disponible sin distorsión. */
+
+
+
+}
+
+
+
+/* Al hacer hover, se aplica el escalamiento */
+
+.mi_wp_galeria_pagina a:hover img {
+
+    transform: scale(1.05);
+
+}
+
+
+
+/* Ajuste para móviles */
+
+@media (max-width: 768px) {
+
+    .mi_wp_galeria_pagina {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ------- COMPONENTE DE BUTTON STICKY WHATSAPP ------ */
+#ast-scroll-top {
+    bottom: 100px;
+    right: 35px;
+}
+
+button.button_sticky_whatsapp,
+.sticky_custom_component {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 20px;
+}
+
+.sticky_custom_component img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 60px;
+    width: 60px;
+}
+
+button.button_sticky_whatsapp_default {
+    --bs-btn-bg: #25d366;
+    --bs-btn-border-color: #25d366DB;
+    --bs-btn-hover-bg: #23c15e;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-border-color: #25d366DB;
+    --bs-btn-active-bg: var(--bs-btn-bg);
+    --bs-btn-active-border-color: var(--bs-btn-border-color);
+    --ast-global-color-1: var(--bs-btn-bg);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    justify-content: flex-end;
+}
+
+.my-float {
+    margin-top: 16px;
+}
+
+/* ------- MODAL DE LEAD ------ */
+
+.modal_form_lead .button_close_modal,
+.modal_form_lead .button_back_step {
+    --bs-btn-close-bg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/></svg>');
+    background: transparent var(--bs-btn-close-bg) center/2em auto no-repeat;
+}
+
+.modal.modal_form_lead {
+    --bs-modal-width: 65%;
+    --bs-modal-padding: 1rem 2rem;
+    height: 90%;
+    top: 60px;
+}
+
+/* ------- CARD Y BOTONES DEL MODAL ------ */
+
+.card_services {
+    cursor: pointer;
+}
+
+span.check_service_card {
+    color: green;
+    left: calc(100% - 7px) !important;
+}
+
+.modal_form_lead button:disabled {
+    background-color: #046bd2b2;
+}
