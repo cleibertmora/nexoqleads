@@ -11,6 +11,9 @@ include_once 'emails/register.php';
 // SHORTCODES
 include_once 'shortcodes/register.php';
 
+// MODULES
+include_once 'modules/register.php';
+
 // HOOKS
 include_once 'hooks/register.php';
 

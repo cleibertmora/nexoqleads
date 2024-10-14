@@ -2,13 +2,14 @@
 // Agregar una opción de menú en el lateral del panel de administración
 function child_add_menu_page_cta()
 {
-    add_menu_page(
-        'CTAs', // Título de la página
-        'CTA', // Texto del menú
-        'manage_options', // Capacidad requerida
-        'page-cta', // Identificador único del menú
-        'child_render_page_customizable_cta', // Función que muestra el contenido de la página
-        'dashicons-editor-paste-text' // Ícono
+    // Submenu for CTA
+    add_submenu_page(
+        'nexo-q-main', // Parent menu slug
+        'CTAs', // Page title
+        'CTA', // Menu title
+        'manage_options', // Capability
+        'page-cta', // Menu slug
+        'child_render_page_customizable_cta' // Function to display the content
     );
 }
 
@@ -163,11 +164,11 @@ function child_enqueue_scripts_page_config_cta()
 
     // Hacer cargar de css y js
     wp_enqueue_style('wp-color-picker');
-    wp_enqueue_style('child_bootstrap_css', get_stylesheet_directory_uri() . '/plugins/bootstrap/bootstrap.min.css', array(), '5.3.3');
-    wp_enqueue_style('child_admin_css', get_stylesheet_directory_uri() . '/styles/admin.css', array(), '');
-    wp_enqueue_script('child_bootstrap_scripts', get_stylesheet_directory_uri() . '/plugins/bootstrap/bootstrap.bundle.min.js', ['jquery', 'wp-element'], '1.0.0', true);
+    wp_enqueue_style('child_bootstrap_css', get_stylesheet_directory_uri() . '/src/plugins/bootstrap/bootstrap.min.css', array(), '5.3.3');
+    wp_enqueue_style('child_admin_css', get_stylesheet_directory_uri() . '/src/css/admin.css', array(), '');
+    wp_enqueue_script('child_bootstrap_scripts', get_stylesheet_directory_uri() . '/src/plugins/bootstrap/bootstrap.bundle.min.js', ['jquery', 'wp-element'], '1.0.0', true);
     wp_enqueue_script('child_admin_scripts', get_stylesheet_directory_uri() . '/public/build/admin_child.js', ['jquery', 'wp-element', 'wp-color-picker'], '1.0.0', true);
-    wp_enqueue_script('child_select2', get_stylesheet_directory_uri() . '/plugins/select2/select2.min.js', ['jquery', 'wp-element'], '1.0.0', true);
-    wp_enqueue_style('child_select2_css', get_stylesheet_directory_uri() . '/plugins/select2/select2.min.css', array(), '');
+    wp_enqueue_script('child_select2', get_stylesheet_directory_uri() . '/src/plugins/select2/select2.min.js', ['jquery', 'wp-element'], '1.0.0', true);
+    wp_enqueue_style('child_select2_css', get_stylesheet_directory_uri() . '/src/plugins/select2/select2.min.css', array(), '');
 
 }

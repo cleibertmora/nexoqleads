@@ -3,13 +3,14 @@
 // Agregar una opción de menú en el lateral del panel de administración
 function child_add_menu_page_config_emails()
 {
-    add_menu_page(
-        'Config Emails', // Título de la página
-        'Config Email', // Texto del menú
-        'manage_options', // Capacidad requerida
-        'page-config-emails', // Identificador único del menú
-        'child_render_page_customizable_config_emails', // Función que muestra el contenido de la página
-        'dashicons-email' // Ícono
+    // Submenu for Config Emails
+    add_submenu_page(
+        'nexo-q-main', // Parent menu slug
+        'Config Emails', // Page title
+        'Config Email', // Menu title
+        'manage_options', // Capability
+        'page-config-emails', // Menu slug
+        'child_render_page_customizable_config_emails' // Function to display the content
     );
 }
 
@@ -111,8 +112,8 @@ function child_enqueue_scripts_page_config_config_emails()
 
     // Hacer cargar de css y js
     wp_enqueue_style('wp-color-picker');
-    wp_enqueue_style('child_bootstrap_css', get_stylesheet_directory_uri() . '/plugins/bootstrap/bootstrap.min.css', array(), '5.3.3');
-    wp_enqueue_style('child_admin_css', get_stylesheet_directory_uri() . '/styles/admin.css', array(), '');
-    wp_enqueue_script('child_bootstrap_scripts', get_stylesheet_directory_uri() . '/plugins/bootstrap/bootstrap.bundle.min.js', ['jquery', 'wp-element'], '1.0.0', true);
+    wp_enqueue_style('child_bootstrap_css', get_stylesheet_directory_uri() . '/src/plugins/bootstrap/bootstrap.min.css', array(), '5.3.3');
+    wp_enqueue_style('child_admin_css', get_stylesheet_directory_uri() . '/src/css/admin.css', array(), '');
+    wp_enqueue_script('child_bootstrap_scripts', get_stylesheet_directory_uri() . '/src/plugins/bootstrap/bootstrap.bundle.min.js', ['jquery', 'wp-element'], '1.0.0', true);
     wp_enqueue_script('child_admin_scripts', get_stylesheet_directory_uri() . '/public/build/admin_child.js', ['jquery', 'wp-element'], '1.0.0', true);
 }

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build ./js/admin_child.js ./js/frontend_child.js --output-path=./public/build",
-    "start": "wp-scripts start ./js/admin_child.js ./js/frontend_child.js --output-path=./public/build"
+    "build": "wp-scripts build ./src/admin_child.js ./src/frontend_child.js --output-path=./public/build",
+    "start": "wp-scripts start ./src/admin_child.js ./src/frontend_child.js --output-path=./public/build"
   },
   "author": "",
   "license": "ISC",

@@ -2,13 +2,14 @@
 // Agregar una opción de menú en el lateral del panel de administración
 function child_add_menu_page_form_lead()
 {
-    add_menu_page(
-        'Configuracion Formulario', // Título de la página
-        'Formulario Lead', // Texto del menú
-        'manage_options', // Capacidad requerida
-        'page-form-lead', // Identificador único del menú
-        'child_render_page_customizable_attr', // Función que muestra el contenido de la página
-        'dashicons-media-document' // Ícono
+    // Submenu for Formulario Lead
+    add_submenu_page(
+        'nexo-q-main', // Parent menu slug
+        'Configuracion Formulario', // Page title
+        'Formulario Lead', // Menu title
+        'manage_options', // Capability
+        'page-form-lead', // Menu slug
+        'child_render_page_customizable_attr' // Function to display the content
     );
 }
 
@@ -456,8 +457,8 @@ function child_enqueue_scripts_page_config_form_lead()
     }
 
     // Hacer cargar de css y js
-    wp_enqueue_style('child_bootstrap_css', get_stylesheet_directory_uri() . '/plugins/bootstrap/bootstrap.min.css', array(), '5.3.3');
-    wp_enqueue_style('child_admin_css', get_stylesheet_directory_uri() . '/styles/admin.css', array(), '');
-    wp_enqueue_script('child_bootstrap_scripts', get_stylesheet_directory_uri() . '/plugins/bootstrap/bootstrap.bundle.min.js', ['jquery', 'wp-element'], '1.0.0', true);
+    wp_enqueue_style('child_bootstrap_css', get_stylesheet_directory_uri() . '/src/plugins/bootstrap/bootstrap.min.css', array(), '5.3.3');
+    wp_enqueue_style('child_admin_css', get_stylesheet_directory_uri() . '/src/css/admin.css', array(), '');
+    wp_enqueue_script('child_bootstrap_scripts', get_stylesheet_directory_uri() . '/src/plugins/bootstrap/bootstrap.bundle.min.js', ['jquery', 'wp-element'], '1.0.0', true);
     wp_enqueue_script('child_admin_scripts', get_stylesheet_directory_uri() . '/public/build/admin_child.js', ['jquery', 'wp-element'], '1.0.0', true);
 }

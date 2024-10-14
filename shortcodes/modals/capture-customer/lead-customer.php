@@ -169,7 +169,7 @@ function shortcode_child_modal_lead_customer($atts)
     // Render
     return <<<EOT
         <!-- Modal -->
-        <div class="modal fade {$className} modal_form_lead" id="{$id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal fade {$className} modal_form_lead" id="{$id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="css" data-bs-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">                    
 

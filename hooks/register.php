@@ -1,10 +1,5 @@
 <?php
 
-// MENU
-require_once 'menu/add-customizable-form.php';
-require_once 'menu/add-cta-page.php';
-require_once 'menu/add-config-emails-page.php';
-
 // AJAX
 require_once 'ajax/form-lead.hook.php';
 
