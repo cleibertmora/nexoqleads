@@ -11,3 +11,14 @@ function util_recursive_sanitize_text_field($array)
 
     return $array;
 }
+
+function nexoq_kses_allowed_html($allowed_post_tags){
+    $allowed_post_tags['iframe'] = array(
+        'src' => true,
+        'width' => true,
+        'height' => true,
+        'frameborder' => true,
+        'allowfullscreen' => true
+    );
+    return $allowed_post_tags;
+}

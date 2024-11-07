@@ -136,12 +136,13 @@ function child_render_content_cta($text, $textButton, $radius, $background, $bac
 
     return <<<EOT
         <div class="container_cta mb-4">
-            <p style="background-color: {$background}; padding: 30px 25px;">{$text}</p>
+            <p>
+                {$text}
+            </p>
             <div class="d-grid justify-content-center">
                 <a class="btn btn-primary text-decoration-none px-5 py-2" href="{$hrefButton}" target="_blank" rel="noreferrer noopener" style="{$styleButton}">
                     {$textButton}
                 </a>
-               
             </div>
         </div>
    EOT;
